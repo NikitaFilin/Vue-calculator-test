@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <title>Vue-test</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="calculateBody">
+          <input class="btnInput" type="text" v-model="result" />
+          <div class="mathLine">
+            <button
+              class="btnMath btn"
+              v-on:click="input(sign)"
+              v-for="sign in mathSigns"
+            >
+              {{sign}}
+            </button>
+          </div>
+          <button
+            class="btnNumber btn"
+            v-on:click="input(number)"
+            v-for="number in numbers"
+          >
+            {{number}}
+          </button>
+          <button
+            class="btnNumber btn"
+            style="background-color: orange"
+            v-on:click="reset()"
+          >
+            C
+          </button>
+          <button class="btnNumber btn" v-on:click="input(0)">0</button>
+          <button
+            class="btnNumber btn"
+            style="background-color: orange"
+            v-on:click="calculate()"
+          >
+            =
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const vue = new Vue({
+        el: "#app",
+        data: {
+          result: " ",
+          numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+          mathSigns: ["+", "-", "*", "/"],
+        },
+        methods: {
+          input: function (char) {
+            this.result = this.result.toString();
+            this.result += char;
+          },
+          reset: function () {
+            this.result = " ";
+          },
+
+          calculate: function () {
+            this.result = eval(this.result);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

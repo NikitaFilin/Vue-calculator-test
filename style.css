@@ -1,0 +1,51 @@
+body {
+  background-image: url(https://cdn.wallpapersafari.com/81/48/OsMHAW.png);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 10%;
+}
+
+.calculateBody {
+  display: flex;
+  height: 300px;
+  padding: 3% 2%;
+  flex-wrap: wrap;
+
+  justify-content: space-around;
+  border: 1px solid black;
+  border-radius: 10%;
+  background-color: #6496be;
+}
+.mathLine {
+  width: 99%;
+  margin: 10px 0px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.btnMath {
+  width: 24%;
+  margin: 2px;
+  border-radius: 15px;
+}
+
+.btnNumber {
+  width: 32%;
+  margin: 2px;
+  border-radius: 15px;
+}
+
+.btnInput {
+  width: 97%;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  text-align: end;
+}
+
+.btn:hover {
+  background-color: orange;
+  outline-color: rgba(71, 126, 232, 0);
+}
